@@ -7,7 +7,6 @@ public class FindMaxThread extends Thread{
     
     private int maxNum=0;
     private ArrayList<Integer> numbers;
-    private String threadName;
     public int limit_size;
     
     FindMaxThread(int limit_size){
@@ -21,9 +20,9 @@ public class FindMaxThread extends Thread{
         Random a = new Random();
         int random;
         for(int i=0;i<this.limit_size;i++){
-            random = a.nextInt(60000);
-            numbers.add(random);
-            if(random>this.maxNum)
+            random = a.nextInt(60000);  // Set random number value limit
+            numbers.add(random);    // Keep the random number in the array
+            if(random>this.maxNum)  // Straight away comparing the random number
                 this.maxNum = random;
         }
     }
