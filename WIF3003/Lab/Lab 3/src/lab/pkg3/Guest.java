@@ -5,9 +5,6 @@
  */
 package lab.pkg3;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author user
@@ -15,11 +12,11 @@ import java.util.logging.Logger;
 public class Guest extends Thread{
 
     private Room room;
-    
+
     public Guest(Room room_number){
         room=room_number;
     }
-    
+
     public void run(){
         try{
             sleep(300);
