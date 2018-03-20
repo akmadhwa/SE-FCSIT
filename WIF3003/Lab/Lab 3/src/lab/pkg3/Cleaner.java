@@ -5,10 +5,6 @@
  */
 package lab.pkg3;
 
-import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author user
@@ -16,11 +12,11 @@ import java.util.logging.Logger;
 public class Cleaner extends Thread{
 
     private Room room;
-    
+
     public Cleaner(Room room_number){
         room=room_number;
     }
-    
+
     public void run(){
         try{
             sleep(300);

@@ -5,30 +5,25 @@
  */
 package lab.pkg3;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Admin
  */
 public class Room{
-    int guests=0,cleaners=0;
 
-    public int getGuests() {
-        return guests;
-    }
+	//	Set global variables
+    private int guests;
+    private int cleaners;
 
-    public int getCleaners() {
-        return cleaners;
-    }
-        
     public Room(){
+    	cleaners = 0;
+    	guests = 0;
     }
 
     public synchronized void guestEnter() throws InterruptedException{
-        while (guests>=6 || cleaners>0)
-            wait();
+        while (guests>=6 || cleaners>0){
+        	wait();
+        }
         guests++;
         System.out.println("Guest enters. \t\tCleaner = "+cleaners+"\tGuest= "+guests);
     }
@@ -40,8 +35,9 @@ public class Room{
     }
 
     public synchronized void cleanerEnter() throws InterruptedException{
-        while(cleaners>0 || guests>0)
-            wait();
+        while(cleaners>0 || guests>0){
+        	wait();
+        }
         cleaners++;
         System.out.println("Cleaner enters. \t\tCleaner = "+cleaners+"\tGuest= "+guests);
     }
